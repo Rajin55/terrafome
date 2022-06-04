@@ -44,4 +44,13 @@ output "sample4" {
   value = var.sample4[3]
 }
 
-
+variable "sample5" {
+  default = [
+   string = "Hello",
+    number = 1000,
+   boolean = true
+  ]
+}
+output "sample" {
+  value = var.sample["number"]
+}
