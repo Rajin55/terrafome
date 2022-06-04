@@ -45,12 +45,12 @@ output "sample4" {
 }
 
 variable "sample5" {
-  default = [
-   string = "Hello",
-    number = 1000,
-   boolean = true
-  ]
+  default = {
+    string  = "Hello",
+    number  = 1000,
+    boolean = true
+  }
 }
-output "sample" {
-  value = var.sample["number"]
+output "sample5" {
+  value = var.sample5["number"]
 }
