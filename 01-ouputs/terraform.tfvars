@@ -1,1 +1,1 @@
-sample6="DevOps Training
+sample6 = "DevOps Training"
