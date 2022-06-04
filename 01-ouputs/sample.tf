@@ -52,5 +52,5 @@ variable "sample5" {
   }
 }
 output "sample5" {
-  value = var.sample5["boolean,number"]
+  value = var.sample5["boolean"]
 }
