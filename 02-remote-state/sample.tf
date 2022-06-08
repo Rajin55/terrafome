@@ -10,6 +10,7 @@ terraform {
     bucket = "terraform-devops55"
     key    = "sample/ terraform.tfstate"
     region = "us-east-1"
+    dynamodb_table = "terraform"
   }
 }
 
@@ -17,6 +18,6 @@ provider "aws" {
   region = "us-east-1"
 }
 
-#
+
 
 
