@@ -4,4 +4,4 @@ resource "aws_instance" "sample" {
   vpc_security_group_ids = [var.sg_id]
 }
 
-variable "sg_id{}
+variable "sg_id" {}
