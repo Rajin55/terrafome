@@ -1,4 +1,4 @@
-esource "aws_launch_template" "template" {
+resource "aws_launch_template" "template" {
   name     = "template-for-roboshop"
   image_id = "ami-0bb6af715826253bf"
   instance_market_options {
