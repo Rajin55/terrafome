@@ -1,17 +1,23 @@
-resource "null_resource" "ansible_apply" {
-  count =  length(var.COMPONENTS)
-  provisioner "remote-exec" {
-    connection {
-      host = "$(element(var.COMPONENTS, count.index).roboshop.internal"
-      user = "centos"
-      password = "DevOps321"
+resource "null_resource" "ansible-apply" {
+    triggers = {
+      abc = timestamp()
     }
+  count               = length(var.COMPONENTS)
+  provisioner "remote-exec" {
+
+    connection {
+      host            = "${element(var.COMPONENTS, count.index)}.roboshop.internal"
+      user            = "centos"
+      password        = "DevOps321"
+    }
+
     inline = [
-      "sudo yum install ansible -y",
-       "sudo yum remove ansible -y"
-       "sudo pip install ansible=3.4.0"
-       "ansible-pull -U https://github.com/Rajin55/ansible.git roboshop.yml -e COMPONENT=$(element(var.COMPONENTS, count.index )"
+      "sudo yum install python3-pip -y",
+      "sudo pip3 install pip --upgrade",
+      "sudo pip3 install ansible==4.1.0",
+      "ansible-pull -i localhost, -U https://DevOps-Batches@dev.azure.com/DevOps-Batches/DevOps56/_git/ansible roboshop-pull.yml -e COMPONENT=${element(var.COMPONENTS, count.index)}"
     ]
+
   }
 }
 
