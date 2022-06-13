@@ -7,7 +7,7 @@ resource "aws_instance" "sample" {
 }
 terraform {
   backend "s3" {
-    bucket = "terraform-devops55"
+    bucket = "terraform-roboshop55"
     key    = "sample/ terraform.tfstate"
     region = "us-east-1"
     dynamodb_table = "terraform"
