@@ -12,7 +12,3 @@ module "ansible" {
   source     = "./ansible-apply"
   COMPONENTS = var.COMPONENTS
 }
-
-provider "aws" {
-  region = "us-east-1"
-}
