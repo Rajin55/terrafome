@@ -8,7 +8,11 @@ module "ec2" {
 }
 
 module "ansible" {
-  depends_on        = [module.ec2]
-  source            = "./ansible-apply"
-  COMPONENTS        = var.COMPONENTS
+  depends_on = [module.ec2]
+  source     = "./ansible-apply"
+  COMPONENTS = var.COMPONENTS
+}
+
+provider "aws" {
+  region = "us-east-1"
 }
