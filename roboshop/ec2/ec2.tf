@@ -32,3 +32,4 @@ resource "aws_route53_record" "dns" {
   records             = [element(aws_spot_instance_request.cheap_worker.*.private_ip, count.index)]
 }
 
+#
